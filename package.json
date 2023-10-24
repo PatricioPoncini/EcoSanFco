@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@types/uuid": "^9.0.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.3",
+    "morgan": "^1.10.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.15",
+    "@types/express": "^4.17.20",
+    "@types/morgan": "^1.9.7",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  },
+  "name": "ecosanfco",
+  "description": "Proyecto para que los vecinos de San Francisco puedan subir reclamos referidos a cuidado del medio ambiente, como reclamo por basural a cielo abierto, basura tirada en calles, incendios, etc",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/index.ts"
+  },
+  "author": "Tripa",
+  "license": "ISC"
+}
