@@ -3,6 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import { connectToDatabase } from './server';
 import userRoutes from './http/router/user';
+import claimRoutes from './http/router/claim';
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 app.use("/", userRoutes);
+app.use("/", claimRoutes);
 
 async function main() {
     try {
