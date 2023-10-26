@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { ClaimModel } from "../../../database";
 import mongoose from "mongoose";
 
-const GetClaimById = async (claimId: mongoose.Types.ObjectId) => {
+export const GetClaimById = async (claimId: mongoose.Types.ObjectId) => {
     const claim = await ClaimModel.findOne({ _id: claimId }).select('-__v').populate('userOwner', 'username');
     return claim;
 }
