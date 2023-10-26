@@ -10,4 +10,4 @@ const userSchema = new Schema({
     zone: { type: String, required: true }
 });
 
-export const UserModel = mongoose.model('Users', userSchema);
+export const UserModel = mongoose.model('User', userSchema);

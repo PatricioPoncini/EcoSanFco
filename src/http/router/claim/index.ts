@@ -1,8 +1,12 @@
 import { Router } from "express";
-import { createClaim } from "../../controllers";
+import { createClaim, getClaimById, getClaims } from "../../controllers";
 
 const router = Router();
 
 router.post('/createClaim', createClaim);
+
+router.get('/claims', getClaims);
+
+router.get('/claim/:id', getClaimById);
 
 export default router;
