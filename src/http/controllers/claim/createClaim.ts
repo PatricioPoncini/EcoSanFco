@@ -13,7 +13,7 @@ const SaveClaim = async (claimData: IClaimBodyData) => {
 
 export const createClaim = async (req: Request, res: Response) => {
     const claimData = req.body as IClaimBodyData;
-    claimData.userOwner = new mongoose.Types.ObjectId("6539af8ea806a3293a038870");
+    claimData.userOwner = new mongoose.Types.ObjectId("6539af8ea806a3293a038870"); // cambiar por id de req.userData
 
     await SaveClaim(claimData);
 
