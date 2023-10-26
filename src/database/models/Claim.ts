@@ -9,4 +9,4 @@ export const claimSchema = new Schema({
     userOwner: { type: Schema.Types.ObjectId, ref: "User" }
 });
 
-export const ClaimModel = mongoose.model('Claims', claimSchema);
+export const ClaimModel = mongoose.model('Claim', claimSchema);
