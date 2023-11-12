@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { UserModel } from "../../../database";
 import { ClaimModel } from "../../../database";
 import mongoose from "mongoose";
 
