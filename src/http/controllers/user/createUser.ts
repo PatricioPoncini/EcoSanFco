@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { UserModel } from "../../../database";
-import { hashPassword } from "../../utils";
 import { IUserBodyData } from "../../types";
+import { hashPassword } from "../../../utils";
 
 const SaveNewUser = async (userData: IUserBodyData) => {
     const newUser = new UserModel(userData);
