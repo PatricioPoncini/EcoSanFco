@@ -8,6 +8,8 @@ export const claimSchema = new Schema({
     upVotes: { type: [Schema.Types.ObjectId], default: [] },
     userOwner: { type: Schema.Types.ObjectId, ref: "User" },
     createdAt: { type: Date, default: Date.now, required: false }
+},{
+    versionKey: false
 });
 
 export const ClaimModel = mongoose.model('Claim', claimSchema);

@@ -1,18 +1,17 @@
 import { Request, Response } from "express";
 import { ClaimModel } from "../../../database";
 
-const GetClaims = async (page: number, pageSize: number) => {
+const GetRecentClaims = async (page: number, pageSize: number) => {
     const skip = (page - 1) * pageSize;
-    const claims = await ClaimModel.find().select('-description -userOwner').skip(skip).limit(pageSize);
+    const claims = await ClaimModel.find().select('-__v -description').skip(skip).limit(pageSize).sort({ createdAt: -1 }).populate('userOwner', 'username');
     return claims;
 }
 
-// get claims withouth details
-export const getClaims = async (req: Request, res: Response) => {
+export const getRecentClaims = async (req: Request, res: Response) => {
     const page = Number(req.query.page) || 1;
     const pageSize = 10;
 
-    const claims = await GetClaims(page, pageSize);
+    const claims = await GetRecentClaims(page, pageSize);
     if (claims.length === 0) {
         return res.status(404).send({ message: 'No hay reclamos aún' });
     }
