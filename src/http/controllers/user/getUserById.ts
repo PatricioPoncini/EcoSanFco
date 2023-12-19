@@ -3,7 +3,7 @@ import { UserModel } from "../../../database";
 import mongoose from "mongoose";
 
 const GetUserById = async (userId: mongoose.Types.ObjectId) => {
-    const user = await UserModel.findOne({ _id: userId }).select('-__v -_id');
+    const user = await UserModel.findOne({ _id: userId }).select('-_id');
     return user;
 }
 

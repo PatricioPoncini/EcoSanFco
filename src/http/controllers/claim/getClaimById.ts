@@ -3,7 +3,7 @@ import { ClaimModel } from "../../../database";
 import mongoose from "mongoose";
 
 export const GetClaimById = async (claimId: mongoose.Types.ObjectId) => {
-    const claim = await ClaimModel.findOne({ _id: claimId }).select('-__v').populate('userOwner', 'username');
+    const claim = await ClaimModel.findOne({ _id: claimId }).populate('userOwner', 'username');
     return claim;
 }
 
@@ -15,5 +15,5 @@ export const getClaimById = async (req: Request, res: Response) => {
         return res.status(404).send({ message: "No existe el reclamo que busca" });
     }
 
-    res.status(200).json({ claim });
+    res.status(200).json(claim);
 }

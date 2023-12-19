@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 export const claimSchema = new Schema({
     title: { type: String, required: true },
-    description: { type: String, required: false, default: "" },
+    description: { type: String, required: true, default: "" },
     images: { type: [String], required: false, default: [] },
     upVotes: { type: [Schema.Types.ObjectId], default: [] },
     userOwner: { type: Schema.Types.ObjectId, ref: "User" },
