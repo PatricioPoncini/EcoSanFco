@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 const LikeClaim = async (userId: mongoose.Types.ObjectId, claimId: mongoose.Types.ObjectId) => {
     const claim = await ClaimModel.findOne({ _id: claimId });
     if (!claim) {
-        // return http response
+        // return http response (add error middleware)
         throw new Error("El reclamo que busca no existe");
     }
 
