@@ -4,6 +4,8 @@ import morgan from 'morgan';
 import { connectToDatabase } from './server';
 import userRoutes from './http/router/user';
 import claimRoutes from './http/router/claim';
+import commentRoutes from './http/router/comment';
+import session from 'express-session';
 
 const app = express();
 
@@ -17,9 +19,15 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(morgan('dev'));
 app.use(express.json());
+// app.use(session({
+//     secret: '123',
+//     resave: true,
+//     saveUninitialized: true
+// }));
 
 app.use("/", userRoutes);
 app.use("/", claimRoutes);
+app.use("/", commentRoutes);
 
 async function main() {
     try {
