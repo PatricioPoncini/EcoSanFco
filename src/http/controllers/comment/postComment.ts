@@ -3,7 +3,7 @@ import { CommentModel } from "../../../database";
 import { Request, Response } from "express";
 
 export const PostComment = async (userId: mongoose.Types.ObjectId, claimId: mongoose.Types.ObjectId, content: string) => {
-    return await CommentModel.create({ claimId, userId, content });
+    return await CommentModel.create({ claimId, user: userId, content });
 }
 
 export const postComment = async (req: Request, res: Response) => {
