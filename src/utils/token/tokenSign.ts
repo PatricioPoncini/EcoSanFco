@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken";
 import { TOKEN_KEY, OPTION_TOKEN_KEY } from "../../env";
-import { IUser } from "../../http";
 import { UserModel } from "../../database";
 
 export const tokenSign = async (id: string) => {

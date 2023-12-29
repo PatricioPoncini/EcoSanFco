@@ -5,6 +5,8 @@ import { Request, Response } from "express";
 export const GetCommentsByClaim = async (claimId: mongoose.Types.ObjectId) => {
     const comments = await CommentModel.find({ claimId: claimId }).populate('user', 'username');
 
+    comments.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
+
     return comments;
 }
 
