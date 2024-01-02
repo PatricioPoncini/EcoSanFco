@@ -14,7 +14,7 @@ export const tokenSign = async (id: string) => {
         TOKEN_KEY || OPTION_TOKEN_KEY,
         {
             algorithm: "HS256",
-            expiresIn: "10s"
+            expiresIn: "1d"
         }
     );
 
